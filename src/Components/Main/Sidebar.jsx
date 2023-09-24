@@ -6,7 +6,9 @@ import {VscTools} from "react-icons/vsc";
 
 import {TbListSearch} from "react-icons/tb";
 
-import counterLogo from "./../../assets/Images/count.png";
+import {HiOutlineDocumentSearch} from "react-icons/hi";
+
+// import mainContent from "../DiffChecker/mainContent";
 
 function Sidebar() {
   return (
@@ -47,11 +49,12 @@ function Sidebar() {
 
             <div className="flex w-full duration-300 border-r-8 border-white border-solid hover:bg-gray-200 hover:border-primary ">
               <div className="w-[30%] flex justify-center items-center h-20">
-                <img className="w-6" src={counterLogo} alt="logo" />
+                {/* <img className="w-6" src={counterLogo} alt="logo" /> */}
+                <HiOutlineDocumentSearch size={30}/>
               </div>
               <div className="w-[70%] flex  items-center ">
                 <h2 className="text-xl font-medium cursor-pointer font-Jost text-brown">
-                  Diff Checker
+                  <a href="https://www.google.com/">Diff Checker</a>
                 </h2>
               </div>
             </div>

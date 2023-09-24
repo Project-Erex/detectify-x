@@ -8,7 +8,7 @@ import {TbListSearch} from "react-icons/tb";
 
 import {RxCross2} from "react-icons/rx";
 
-import Counter from "./../../assets/Images/count.png";
+import {HiOutlineDocumentSearch} from "react-icons/hi";
 
 import MainLogo from "./../../assets/Images/DetectifyX.png";
 function MobileHeader() {
@@ -45,8 +45,8 @@ function MobileHeader() {
         {/* ============================================== */}
 
         <div className="flex items-center justify-center w-full gap-2 py-2 mt-2 duration-300 bg-gray-300 border-l-8 border-r-8 border-white border-solid cursor-pointer hover:bg-gray-200 hover:border-primary ">
-          <div className="-ml-3">
-            <img className="w-6 " src={Counter} alt="Counter" />
+          <div className="-ml-[52px]">
+           <HiOutlineDocumentSearch size={30}/>
           </div>
           <div> Diff Checker</div>
         </div>

@@ -112,7 +112,7 @@ export default function DiffHome() {
           <div className="flex flex-wrap gap-2 pt-10">
             {matchTxt.length < 1 && (
               <>
-                <ButtonsGroup onClick={() => setValue(chatGpt)} text="I dont Knowww" />
+                <ButtonsGroup onClick={() => setValue(chatGpt)} text="I dont Knoww" />
                 <ButtonsGroup onClick={() => setValue(GPT4)} text="GPT4" />
                 <ButtonsGroup onClick={() => setValue(human)} text="Human" />
                 <ButtonsGroup onClick={() => setValue(bard)} text="AI+Human" />

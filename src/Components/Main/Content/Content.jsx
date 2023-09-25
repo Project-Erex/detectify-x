@@ -15,8 +15,9 @@ import ChartAndHighlighterbox from "./GaugeChart&Highlighter/ChartAndHighlighter
 import Ads from "./Ads/Ads";
 
 import {aiPlusHuman, chatGpt, GPT4, human, bard} from "./InputBox/dummy";
+import { Outlet } from "react-router-dom";
 
-function Content() {
+function Content({isDiff,isHome}) {
   const [value, setValue] = useState("");
   const [matchTxt, setTextMatch] = useState([]);
   const [disabled, setIsDisabled] = useState(true);
@@ -107,7 +108,8 @@ function Content() {
   return (
     <>
       <div className="md:w-[80%] flex flex-col-reverse  md:flex-row  right-0  z-[-1] absolute w-full ">
-        <div className="md:w-[80%] w-full py-4 md:py-6 md:px-6  px-4 flex-col  bg-white">
+
+        {isDiff ? <div className="md:w-[80%] w-full py-4 md:py-6 md:px-6  px-4 flex-col  bg-white">
           {/*========================================================
                        <======== Header ========>
            ========================================================*/}
@@ -170,7 +172,8 @@ function Content() {
           )}
 
           {/* ======================================================= */}
-        </div>
+        </div>:<Outlet/>}
+        
 
         <div className="md:w-[20%] w-full h-[100vh] pt-20 md:pt-10 flex">
           <Ads />

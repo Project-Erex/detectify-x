@@ -11,8 +11,19 @@ import {RxCross2} from "react-icons/rx";
 import {HiOutlineDocumentSearch} from "react-icons/hi";
 
 import MainLogo from "./../../assets/Images/DetectifyX.png";
-function MobileHeader() {
+import { Link } from "react-router-dom";
+function MobileHeader({setIsDiff,setIsHome}) {
   const [IsOpen, setIsOpen] = useState();
+  const handleClick = ()=>{
+    setIsDiff(false)
+    setIsHome(false)
+    setIsOpen(!IsOpen)
+  }
+  const handleHome = ()=>{
+    setIsHome(true)
+    setIsDiff(true)
+    setIsOpen(!IsOpen)
+  }
   return (
     <>
       <div className="bg-white  fixed top-0 w-screen py-8 md:py-0 flex z-[1] justify-between shadow-md items-center px-4 md:hidden h-[10%]">
@@ -23,7 +34,7 @@ function MobileHeader() {
       </div>
 
       <div
-        className={` bg-white md:hidden fixed   duration-500 ease-in-out flex h-[100%] w-full ${
+        className={` bg-white md:hidden fixed duration-500 ease-in-out flex h-[100%] w-full ${
           IsOpen ? "top-10" : "top-[-100%]"
         }  flex-col justify-start items-start px-6 pt-12 text-center font-Jost text-brown `}>
         {/* ============================================== */}
@@ -36,21 +47,19 @@ function MobileHeader() {
         </div>
         {/* ============================================== */}
 
-        <div className="flex items-center justify-center w-full gap-2 py-2 duration-300 bg-gray-300 border-l-8 border-r-8 border-white border-solid cursor-pointer hover:bg-gray-200 hover:border-primary ">
+        <div className="flex items-center justify-center w-full gap-2 py-2 duration-300 bg-gray-300 border-l-8 border-r-8 border-white border-solid cursor-pointer hover:bg-gray-200 hover:border-primary" onClick={handleHome}>
           <div>
             <TbListSearch size={30} />
           </div>
           <div> AI Content Detector</div>
         </div>
         {/* ============================================== */}
-
-        <div className="flex items-center justify-center w-full gap-2 py-2 mt-2 duration-300 bg-gray-300 border-l-8 border-r-8 border-white border-solid cursor-pointer hover:bg-gray-200 hover:border-primary ">
+        <Link className="flex items-center justify-center w-full gap-2 py-2 mt-2 duration-300 bg-gray-300 border-l-8 border-r-8 border-white border-solid cursor-pointer hover:bg-gray-200 hover:border-primary" to={`/diffchecker`} onClick={handleClick}>
           <div className="-ml-[52px]">
            <HiOutlineDocumentSearch size={30}/>
           </div>
           <div> Diff Checker</div>
-        </div>
-
+        </Link>
         {/* ============================================== */}
       </div>
     </>

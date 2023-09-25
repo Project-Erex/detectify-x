@@ -45,7 +45,7 @@ function Sidebar({setIsDiff, setIsHome}) {
           {/* Item-1 */}
           <div className="flex flex-col gap-1">
             <Link to={`/`} onClick={handleHome}>
-              <div className="flex w-full bg-gray-200 border-r-8 border-solid border-primary ">
+              <div className="flex w-full border-r-8 border-white border-solid hover:bg-gray-200 hover:border-primary ">
                 <div className="w-[30%] flex justify-center items-center h-20">
                   <TbListSearch size={30} />
                 </div>

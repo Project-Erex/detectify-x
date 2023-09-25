@@ -15,13 +15,28 @@ import ChartAndHighlighterbox from "./GaugeChart&Highlighter/ChartAndHighlighter
 import Ads from "./Ads/Ads";
 
 import {aiPlusHuman, chatGpt, GPT4, human, bard} from "./InputBox/dummy";
+<<<<<<< HEAD
 
 function Content() {
+=======
+import { Outlet } from "react-router-dom";
+
+function Content({isDiff,isHome}) {
+>>>>>>> mithun
   const [value, setValue] = useState("");
   const [matchTxt, setTextMatch] = useState([]);
   const [disabled, setIsDisabled] = useState(true);
   const [score, setScore] = useState(0.1);
   const [isLoading, setIsLoading] = useState(false);
+<<<<<<< HEAD
+=======
+  const [wordCount, setWordCount] = useState(0);
+  const [charCount, setCharCount] = useState(0);
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+>>>>>>> mithun
   const detectAIKeywordsAndPercentage = (text) => {
     setIsLoading(true);
     const aiPatterns = [
@@ -81,10 +96,35 @@ function Content() {
     }
   }, [value]);
 
+<<<<<<< HEAD
   return (
     <>
       <div className="md:w-[80%] flex flex-col-reverse  md:flex-row  right-0  z-[-1] absolute w-full ">
         <div className="md:w-[80%] w-full py-4 md:py-6 md:px-6  px-4 flex-col  bg-white">
+=======
+  useEffect(() => {
+    // array of words
+    const words = value.split(" ");
+
+    // update word count
+    let wordCount = 0;
+    words.forEach((word) => {
+      if (word.trim() !== "") {
+        wordCount++;
+      }
+    });
+    setWordCount(wordCount);
+
+    // update char count (including whitespaces)
+    setCharCount(value.length);
+  }, [value]);
+
+  return (
+    <>
+      <div className="md:w-[80%] flex flex-col-reverse  md:flex-row  right-0  z-[-1] absolute w-full ">
+
+        {isDiff ? <div className="md:w-[80%] w-full py-4 md:py-6 md:px-6  px-4 flex-col  bg-white">
+>>>>>>> mithun
           {/*========================================================
                        <======== Header ========>
            ========================================================*/}
@@ -134,7 +174,13 @@ function Content() {
                   <Inputbox
                     match={matchTxt}
                     value={value}
+<<<<<<< HEAD
                     onChange={(text) => setValue(text)}
+=======
+                    onChange={(text) => setValue(text) && {handleChange}}
+                    wordCount={wordCount}
+                    charCount={charCount}
+>>>>>>> mithun
                   />
                   <div className="flex justify-end mt-4 xl:mr-44 ">
                     <InputSubBtn disabled={disabled} onSubmit={handleSubmit} />
@@ -145,7 +191,12 @@ function Content() {
           )}
 
           {/* ======================================================= */}
+<<<<<<< HEAD
         </div>
+=======
+        </div>:<Outlet/>}
+        
+>>>>>>> mithun
 
         <div className="md:w-[20%] w-full h-[100vh] pt-20 md:pt-10 flex">
           <Ads />

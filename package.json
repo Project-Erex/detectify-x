@@ -1,16 +1,26 @@
 {
+<<<<<<< HEAD
   "name": "detectify-x",
   "homepage": "https://Project-Erex.github.io/detectify-x",
+=======
+  "name": "detectifyx-clone",
+>>>>>>> mithun
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+<<<<<<< HEAD
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build" 
+=======
+    "build": "set \"GENERATE_SOURCEMAP=false\" && vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+>>>>>>> mithun
   },
   "dependencies": {
     "lodash": "^4.17.21",
@@ -18,7 +28,12 @@
     "react-dom": "^18.2.0",
     "react-gauge-chart": "^0.4.1",
     "react-highlight-words": "^0.20.0",
+<<<<<<< HEAD
     "react-icons": "^4.11.0"
+=======
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.16.0"
+>>>>>>> mithun
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -29,7 +44,10 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+<<<<<<< HEAD
     "gh-pages": "^6.0.0",
+=======
+>>>>>>> mithun
     "postcss": "^8.4.30",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
